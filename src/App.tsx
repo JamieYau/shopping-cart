@@ -1,22 +1,11 @@
 import "./App.css";
-import { NavLink, Outlet } from "react-router-dom";
+import { Outlet } from "react-router-dom";
+import Header from "./components/Header";
 
 function App() {
   return (
     <div className="App">
-      <header>
-        <span className="logo">🦕</span>
-        <nav>
-          <ul>
-            <li>
-              <NavLink to="/">Home</NavLink>
-            </li>
-            <li>
-              <NavLink to="/store">Store</NavLink>
-            </li>
-          </ul>
-        </nav>
-      </header>
+      <Header />
       <main>
         <Outlet />
       </main>
