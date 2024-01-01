@@ -4,7 +4,7 @@ export default function Footer() {
   return (
     <footer className={styles.footer}>
       <p>
-        &copy; 2021 <a href="https://github.com/JamieYau">Jamie Yau</a>
+        &copy; 2024 <a href="https://github.com/JamieYau">Jamie Yau</a>
       </p>
     </footer>
   );
