@@ -5,9 +5,7 @@ function App() {
   return (
     <div className="App">
       <header>
-        <h1>
-          <span className="logo">🦕</span>
-        </h1>
+        <span className="logo">🦕</span>
         <nav>
           <ul>
             <li>
