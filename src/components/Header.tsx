@@ -7,7 +7,9 @@ import styles from "./Header.module.css";
 export default function Header() {
   return (
     <header className={styles.header}>
-      <span className={styles.logo}>🦕</span>
+      <NavLink to="/" className={styles.logoLink}>
+        <img src="/logo.png" alt="Logo" className={styles.logoImage} />
+      </NavLink>
       <nav>
         <ul className={styles.navList}>
           <li>
