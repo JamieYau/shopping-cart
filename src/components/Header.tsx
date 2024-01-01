@@ -1,16 +1,22 @@
+// Header.tsx
 import { NavLink } from "react-router-dom";
+import styles from "./Header.module.css";
 
 export default function Header() {
   return (
-    <header>
-      <span className="logo">🦕</span>
+    <header className={styles.header}>
+      <span className={styles.logo}>🦕</span>
       <nav>
-        <ul>
+        <ul className={styles.navList}>
           <li>
-            <NavLink to="/">Home</NavLink>
+            <NavLink to="/" className={styles.navLink}>
+              Home
+            </NavLink>
           </li>
           <li>
-            <NavLink to="/store">Store</NavLink>
+            <NavLink to="/store" className={styles.navLink}>
+              Store
+            </NavLink>
           </li>
         </ul>
       </nav>
