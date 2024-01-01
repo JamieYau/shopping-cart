@@ -1,3 +1,11 @@
 .App {
-  background-color: #fff;
+  display: flex;
+  flex-direction: column;
+  color: #333;
+  background-color: #f5f5f5;
+  min-height: 100vh;
+}
+
+main {
+  flex-grow: 1;
 }
