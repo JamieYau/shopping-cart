@@ -40,8 +40,10 @@
   font-weight: 700;
   cursor: pointer;
   padding: 0;
+  transition: all 0.2s ease-in-out;
 
   &:hover {
     color: #0070f3;
+    transform: scale(1.1);
   }
 }

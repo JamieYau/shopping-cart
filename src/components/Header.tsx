@@ -21,8 +21,15 @@ export default function Header() {
             </NavLink>
           </li>
           <li>
-            <button className={styles.basket} type="button" aria-label="Shopping Basket">
-                <FontAwesomeIcon icon={faCartShopping} />
+            <button
+              className={styles.basket}
+              type="button"
+              aria-label="Shopping Basket"
+            >
+              <FontAwesomeIcon
+                icon={faCartShopping}
+                className={styles.basketIcon}
+              />
             </button>
           </li>
         </ul>
