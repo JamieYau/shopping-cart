@@ -30,10 +30,17 @@ ul {
   margin: 0;
 }
 
-button {
+a {
+  text-decoration: none;
+  transition: all 0.2s ease-in-out;
+}
+
+button,
+.button {
   display: flex;
   align-items: center;
   background-color: #22a89d;
+  color: #ffffff;
   border: none;
   border-radius: 5px;
   padding: 1em 2em;

@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import styles from "./HomePage.module.css";
 import ProductList from "../../components/ProductList";
 
@@ -12,7 +13,7 @@ export default function HomePage() {
           facere, laudantium voluptatibus veritatis, voluptas tempora temporibus
           exercitationem, quasi consectetur quibusdam.
         </p>
-        <button type="button">Shop Now</button>
+        <Link to="/store" className="button">Shop Now</Link>
       </section>
       <section className={styles.featuredSection}>
         <h2>Featured Items</h2>
