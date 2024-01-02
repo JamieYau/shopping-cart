@@ -1,4 +1,5 @@
 import styles from "./HomePage.module.css";
+import ProductCard from "../../components/ProductCard";
 
 export default function HomePage() {
   return (
@@ -17,20 +18,16 @@ export default function HomePage() {
         <h2>Featured Items</h2>
         <ul className={styles.featuredItems}>
           <li>
-            <img src="/images/placeholder.png" alt="Placeholder" />
-            <p>Item 1</p>
+            <ProductCard />
           </li>
           <li>
-            <img src="/images/placeholder.png" alt="Placeholder" />
-            <p>Item 2</p>
+            <ProductCard />
           </li>
           <li>
-            <img src="/images/placeholder.png" alt="Placeholder" />
-            <p>Item 3</p>
+            <ProductCard />
           </li>
           <li>
-            <img src="/images/placeholder.png" alt="Placeholder" />
-            <p>Item 4</p>
+            <ProductCard />
           </li>
         </ul>
       </section>
