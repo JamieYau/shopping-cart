@@ -4,7 +4,7 @@ import ProductList from "../../components/ProductList";
 
 export default function HomePage() {
   return (
-    <div className={styles.homePage}>
+    <main className={styles.homePage}>
       <section className={styles.introSection}>
         <h1>Welcome to the home page!</h1>
         <p>
@@ -42,6 +42,6 @@ export default function HomePage() {
           ]}
         />
       </section>
-    </div>
+    </main>
   );
 }
