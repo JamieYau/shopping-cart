@@ -1,5 +1,5 @@
 import styles from "./HomePage.module.css";
-import ProductCard from "../../components/ProductCard";
+import ProductList from "../../components/ProductList";
 
 export default function HomePage() {
   return (
@@ -16,20 +16,30 @@ export default function HomePage() {
       </section>
       <section className={styles.featuredSection}>
         <h2>Featured Items</h2>
-        <ul className={styles.featuredItems}>
-          <li>
-            <ProductCard />
-          </li>
-          <li>
-            <ProductCard />
-          </li>
-          <li>
-            <ProductCard />
-          </li>
-          <li>
-            <ProductCard />
-          </li>
-        </ul>
+        <ProductList
+          products={[
+            {
+              id: 1,
+              name: "Product 1",
+              price: 9.99,
+            },
+            {
+              id: 2,
+              name: "Product 2",
+              price: 19.99,
+            },
+            {
+              id: 3,
+              name: "Product 3",
+              price: 29.99,
+            },
+            {
+              id: 4,
+              name: "Product 4",
+              price: 39.99,
+            },
+          ]}
+        />
       </section>
     </div>
   );

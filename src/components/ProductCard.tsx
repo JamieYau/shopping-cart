@@ -1,12 +1,18 @@
-import styles from './ProductCard.module.css';
+import styles from "./ProductCard.module.css";
 
-export default function ProductCard() {
+interface Product {
+  id: number;
+  name: string;
+  price: number;
+}
+
+export default function ProductCard({ product }: { product: Product }) {
   return (
-    <div className={styles.productCard}>
+    <li className={styles.productCard}>
       <img src="/images/placeholder.png" alt="Placeholder" />
-      <p>Product Name</p>
-      <p>£9.99</p>
+      <p>{product.name}</p>
+      <p>{product.price}</p>
       <button type="button">Add to Basket</button>
-    </div>
+    </li>
   );
 }
