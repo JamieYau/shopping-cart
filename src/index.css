@@ -21,7 +21,23 @@ body {
 
 h1 {
   font-size: 3.2em;
-  line-height: 1.1;
+  line-height: 1;
+}
+
+button {
+  display: flex;
+  align-items: center;
+  background-color: #22a89d;
+  border: none;
+  border-radius: 5px;
+  padding: 1em 2em;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+
+  &:hover {
+    background-color: #1b7a6e;
+    scale: 1.05;
+  }
 }
 
 @media (prefers-color-scheme: light) {

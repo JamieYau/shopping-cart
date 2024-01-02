@@ -6,7 +6,32 @@
   color: #333;
 }
 
-.homePage h1 {
-  font-size: 2.5rem;
-  font-weight: bold;
+.homePage > section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  padding: 2em 0;
+}
+
+.introSection {
+  > p {
+    max-width: 75%;
+  }
+}
+
+.featuredSection {
+  background-color: rgb(238, 238, 238);
+
+  > h2 {
+    margin: 0;
+    margin-bottom: 1em;
+  }
+}
+
+button {
+  background-color: #22a89d;
+  border: none;
+  border-radius: 5px;
+  padding: 1em 2em;
 }

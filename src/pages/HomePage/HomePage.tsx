@@ -3,7 +3,7 @@ import styles from "./HomePage.module.css";
 export default function HomePage() {
   return (
     <div className={styles.homePage}>
-      <section>
+      <section className={styles.introSection}>
         <h1>Welcome to the home page!</h1>
         <p>
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Amet harum
@@ -13,7 +13,7 @@ export default function HomePage() {
         </p>
         <button type="button">Shop Now</button>
       </section>
-      <section>
+      <section className={styles.featuredSection}>
         <h2>Featured Items</h2>
         <ul className={styles.featuredItems}>
           <li>
