@@ -1,7 +1,7 @@
 export default function StorePage() {
   return (
-    <div>
+    <main>
       <h1>Welcome to the store page!</h1>
-    </div>
+    </main>
   );
 }

@@ -1,0 +1,38 @@
+.homePage {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: #333;
+}
+
+.homePage > section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  padding: 2em 0;
+}
+
+.introSection {
+  > p {
+    max-width: 75%;
+  }
+}
+
+.featuredSection {
+  background-color: rgb(238, 238, 238);
+  flex-grow: 1;
+
+  > h2 {
+    margin: 0;
+    margin-bottom: 1em;
+  }
+}
+
+button {
+  background-color: #22a89d;
+  border: none;
+  border-radius: 5px;
+  padding: 1em 2em;
+}
