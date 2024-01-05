@@ -4,7 +4,7 @@ import ProductList from "../../components/ProductList";
 import { useProducts } from "../../contexts/ProductsContext";
 
 export default function HomePage() {
-  const products = useProducts();
+  const {products} = useProducts();
   const featuredProducts = products.slice(1, 5);
 
   return (
