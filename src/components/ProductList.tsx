@@ -1,12 +1,7 @@
 import PropTypes from "prop-types";
 import styles from "./ProductList.module.css";
 import ProductCard from "./ProductCard";
-
-interface Product {
-  id: number;
-  name: string;
-  price: number;
-}
+import Product from "../types/product";
 
 export default function ProductList({
   products,
@@ -32,9 +27,16 @@ ProductList.propTypes = {
   products: PropTypes.arrayOf(
     PropTypes.shape({
       id: PropTypes.number.isRequired,
-      name: PropTypes.string.isRequired,
+      title: PropTypes.string.isRequired,
+      category: PropTypes.string.isRequired,
+      description: PropTypes.string.isRequired,
+      image: PropTypes.string.isRequired,
       price: PropTypes.number.isRequired,
-    }),
+      rating: PropTypes.shape({
+        rate: PropTypes.number.isRequired,
+        count: PropTypes.number.isRequired,
+      }).isRequired,
+    })
   ).isRequired,
   className: PropTypes.string,
 };

@@ -37,7 +37,7 @@
   }
 }
 
-.basket {
+.header .basket {
   gap: 10px;
   background-color: transparent;
   border: none;

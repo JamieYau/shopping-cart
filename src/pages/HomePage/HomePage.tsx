@@ -1,8 +1,12 @@
 import { Link } from "react-router-dom";
 import styles from "./HomePage.module.css";
 import ProductList from "../../components/ProductList";
+import { useProducts } from "../../contexts/ProductsContext";
 
 export default function HomePage() {
+  const products = useProducts();
+  const featuredProducts = products.slice(1, 5);
+
   return (
     <main className={styles.homePage}>
       <section className={styles.introSection}>
@@ -20,28 +24,7 @@ export default function HomePage() {
       <section className={styles.featuredSection}>
         <h2>Featured Items</h2>
         <ProductList
-          products={[
-            {
-              id: 1,
-              name: "Product 1",
-              price: 9.99,
-            },
-            {
-              id: 2,
-              name: "Product 2",
-              price: 19.99,
-            },
-            {
-              id: 3,
-              name: "Product 3",
-              price: 29.99,
-            },
-            {
-              id: 4,
-              name: "Product 4",
-              price: 39.99,
-            },
-          ]}
+          products={featuredProducts}
         />
       </section>
     </main>
