@@ -1,7 +1,7 @@
 import PropTypes from "prop-types";
 import styles from "./ProductList.module.css";
 import ProductCard from "./ProductCard";
-import Product from "../types/product";
+import { Product } from "../types/types";
 
 export default function ProductList({
   products,
@@ -36,7 +36,7 @@ ProductList.propTypes = {
         rate: PropTypes.number.isRequired,
         count: PropTypes.number.isRequired,
       }).isRequired,
-    }),
+    })
   ).isRequired,
   className: PropTypes.string,
 };

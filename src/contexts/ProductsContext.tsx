@@ -1,23 +1,16 @@
 import { createContext, useContext, useState, useEffect, useMemo } from "react";
-import {Product} from "../types/product";
+import { Product, ProductsContextType, ProductsProviderProps } from "../types/types";
 import fetchProducts from "../services/api";
 
-type ProductsProviderProps = {
-  children: React.ReactNode;
-};
-type ProductsContextType = {
-  products: Product[];
-  setProducts: React.Dispatch<React.SetStateAction<Product[]>>;
-};
 const ProductsContext = createContext<ProductsContextType | undefined>(
-  undefined,
+  undefined
 );
 
 export default function ProductsProvider({ children }: ProductsProviderProps) {
   const [products, setProducts] = useState<Product[]>([]);
   const contextValue = useMemo(
     () => ({ products, setProducts }),
-    [products, setProducts],
+    [products, setProducts]
   );
 
   useEffect(() => {

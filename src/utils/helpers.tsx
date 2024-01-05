@@ -1,6 +1,6 @@
 /* eslint-disable react/no-array-index-key */
 import { IoStarHalfSharp, IoStarOutline, IoStarSharp } from "react-icons/io5";
-import { Product } from "../types/product";
+import { Product } from "../types/types";
 
 export default function formatRating(product: Product): {
   stars: JSX.Element;
