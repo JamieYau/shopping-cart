@@ -1,7 +1,9 @@
 import styles from "./ProductCard.module.css";
 import Product from "../types/product";
+import formatRating from "../utils/helpers";
 
 export default function ProductCard({ product }: { product: Product }) {
+  const { stars, count } = formatRating(product);
   return (
     <li className={styles.productCard}>
       <img src={product.image} alt="Placeholder" />
@@ -9,7 +11,10 @@ export default function ProductCard({ product }: { product: Product }) {
       <p className={styles.category}>{product.category}</p>
       <div className={styles.actions}>
         <p className={styles.price}>£{product.price}</p>
-        <button type="button" className={styles.add}>Add to Cart</button>
+        <div className={styles.rating}>
+          {stars}
+          <span className={styles.count}>{count}</span>
+        </div>
       </div>
     </li>
   );

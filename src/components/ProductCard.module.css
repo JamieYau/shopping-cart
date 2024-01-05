@@ -14,7 +14,8 @@
   &:hover {
     transform: scale(1.02);
   }
-  > *, p {
+  > *,
+  p {
     margin: 0;
   }
 }
@@ -48,9 +49,16 @@
   justify-content: space-between;
   align-items: center;
   width: 100%;
-  margin-top: auto;
+  margin-top: 0.2em;
 
-  .price {
-    font-weight: bold;
+  .rating {
+    display: flex;
+    align-items: center;
+    color: #fad416;
+
+    .count {
+      font-size: 0.8rem;
+      color: #666;
+    }
   }
 }
