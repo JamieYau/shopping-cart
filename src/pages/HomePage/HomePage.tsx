@@ -23,7 +23,7 @@ export default function HomePage() {
       </section>
       <section className={styles.featuredSection}>
         <h2>Featured Items</h2>
-        <ProductList products={featuredProducts} className="featured"/>
+        <ProductList products={featuredProducts}/>
       </section>
     </main>
   );

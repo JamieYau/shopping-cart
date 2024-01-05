@@ -4,7 +4,6 @@
   align-items: center;
   justify-content: center;
   color: #333;
-  text-align: center;
 }
 
 .homePage > section {
@@ -16,6 +15,7 @@
 }
 
 .introSection {
+  text-align: center;
   > p {
     max-width: 75%;
     margin-bottom: 2em;
