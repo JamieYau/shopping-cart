@@ -4,8 +4,15 @@ import ProductCard from "./ProductCard";
 
 interface Product {
   id: number;
-  name: string;
+  title: string;
+  category: string;
+  description: string;
+  image: string;
   price: number;
+  rating: {
+    rate: number;
+    count: number;
+  };
 }
 
 export default function ProductList({
@@ -32,9 +39,16 @@ ProductList.propTypes = {
   products: PropTypes.arrayOf(
     PropTypes.shape({
       id: PropTypes.number.isRequired,
-      name: PropTypes.string.isRequired,
+      title: PropTypes.string.isRequired,
+      category: PropTypes.string.isRequired,
+      description: PropTypes.string.isRequired,
+      image: PropTypes.string.isRequired,
       price: PropTypes.number.isRequired,
-    }),
+      rating: PropTypes.shape({
+        rate: PropTypes.number.isRequired,
+        count: PropTypes.number.isRequired,
+      }).isRequired,
+    })
   ).isRequired,
   className: PropTypes.string,
 };
