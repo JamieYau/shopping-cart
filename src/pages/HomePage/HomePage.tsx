@@ -1,20 +1,11 @@
-import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import styles from "./HomePage.module.css";
 import ProductList from "../../components/ProductList";
-import fetchProducts from "../../services/api";
+import { useProducts } from "../../contexts/ProductsContext";
 
 export default function HomePage() {
-  const [products, setProducts] = useState([]);
+  const products = useProducts();
 
-  useEffect(() => {
-    const getProducts = async () => {
-      const data = await fetchProducts();
-      setProducts(data);
-    };
-
-    getProducts();
-  }, []);
   return (
     <main className={styles.homePage}>
       <section className={styles.introSection}>
