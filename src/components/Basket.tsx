@@ -3,7 +3,7 @@ import { useProducts } from "../contexts/ProductsContext";
 import styles from "./Basket.module.css";
 
 export default function Basket() {
-  const { basket, removeFromBasket, isOpen } = useBasket();
+  const { basket, removeFromBasket, isOpen, toggleBasket } = useBasket();
   const { products } = useProducts();
   const basketProducts = basket.map((basketItem) => {
     const product = products.find((prod) => prod.id === basketItem.id);
@@ -50,7 +50,14 @@ export default function Basket() {
           </>
         )}
       </div>
-      <div className={`${styles.overlay} ${isOpen ? styles.open : ""}`} />
+      <div
+        className={`${styles.overlay} ${isOpen ? styles.open : ""}`}
+        onClick={toggleBasket}
+        onKeyDown={toggleBasket}
+        role="button"
+        tabIndex={0}
+        aria-label="Toggle Basket"
+      />
     </>
   );
 }
