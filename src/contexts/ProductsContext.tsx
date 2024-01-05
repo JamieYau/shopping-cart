@@ -1,5 +1,5 @@
 import { createContext, useContext, useState, useEffect, useMemo } from "react";
-import Product from "../types/product";
+import {Product} from "../types/product";
 import fetchProducts from "../services/api";
 
 type ProductsProviderProps = {
