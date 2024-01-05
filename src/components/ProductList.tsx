@@ -1,4 +1,5 @@
 import PropTypes from "prop-types";
+import { Link } from "react-router-dom";
 import styles from "./ProductList.module.css";
 import ProductCard from "./ProductCard";
 import { Product } from "../types/types";
@@ -13,7 +14,9 @@ export default function ProductList({
   return (
     <ul className={`${styles.productList} ${className}`}>
       {products.map((product) => (
-        <ProductCard key={product.id} product={product} />
+        <Link key={product.id} to={`/product/${product.id}`}>
+          <ProductCard product={product} />
+        </Link>
       ))}
     </ul>
   );
