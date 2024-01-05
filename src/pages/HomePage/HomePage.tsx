@@ -13,7 +13,9 @@ export default function HomePage() {
           facere, laudantium voluptatibus veritatis, voluptas tempora temporibus
           exercitationem, quasi consectetur quibusdam.
         </p>
-        <Link to="/store" className="button">Shop Now</Link>
+        <Link to="/store" className="button">
+          Shop Now
+        </Link>
       </section>
       <section className={styles.featuredSection}>
         <h2>Featured Items</h2>

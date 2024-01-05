@@ -34,7 +34,7 @@ ProductList.propTypes = {
       id: PropTypes.number.isRequired,
       name: PropTypes.string.isRequired,
       price: PropTypes.number.isRequired,
-    })
+    }),
   ).isRequired,
   className: PropTypes.string,
 };
