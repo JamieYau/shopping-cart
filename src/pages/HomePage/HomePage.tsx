@@ -5,6 +5,7 @@ import { useProducts } from "../../contexts/ProductsContext";
 
 export default function HomePage() {
   const products = useProducts();
+  const featuredProducts = products.slice(1, 5);
 
   return (
     <main className={styles.homePage}>
@@ -23,7 +24,7 @@ export default function HomePage() {
       <section className={styles.featuredSection}>
         <h2>Featured Items</h2>
         <ProductList
-          products={products}
+          products={featuredProducts}
         />
       </section>
     </main>

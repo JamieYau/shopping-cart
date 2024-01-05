@@ -17,6 +17,8 @@
 .introSection {
   > p {
     max-width: 75%;
+    text-align: center;
+    margin-bottom: 2em;
   }
 }
 
