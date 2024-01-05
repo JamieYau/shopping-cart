@@ -28,7 +28,7 @@
   box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
 }
 
-.title {
+.productCard .title {
   font-weight: bold;
   margin: 0.3em 0 0.2em;
   width: 100%;
@@ -37,19 +37,23 @@
   white-space: nowrap;
 }
 
-.category {
+.productCard .category {
   line-height: 1;
   font-size: 0.8rem;
   color: #666;
   margin-bottom: 0.5em;
 }
 
-.actions {
+.productCard .actions {
   display: flex;
   justify-content: space-between;
   align-items: center;
   width: 100%;
   margin-top: 0.2em;
+
+  .price {
+    font-weight: bold;
+  }
 
   .rating {
     display: flex;

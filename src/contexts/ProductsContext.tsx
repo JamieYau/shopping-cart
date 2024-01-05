@@ -1,15 +1,40 @@
-import { createContext, useContext } from "react";
-import Product from "../types/product";
+import { createContext, useContext, useState, useEffect, useMemo } from "react";
+import { Product, ProductsContextType, ProductsProviderProps } from "../types/types";
+import fetchProducts from "../services/api";
 
-const ProductsContext = createContext<Product[] | undefined>(undefined);
+const ProductsContext = createContext<ProductsContextType | undefined>(
+  undefined
+);
+
+export default function ProductsProvider({ children }: ProductsProviderProps) {
+  const [products, setProducts] = useState<Product[]>([]);
+  const contextValue = useMemo(
+    () => ({ products, setProducts }),
+    [products, setProducts]
+  );
+
+  useEffect(() => {
+    const getProducts = async () => {
+      const data = await fetchProducts();
+      setProducts(data);
+    };
+
+    getProducts();
+  }, []);
+
+  return (
+    <ProductsContext.Provider value={contextValue}>
+      {children}
+    </ProductsContext.Provider>
+  );
+}
 
 export function useProducts() {
-  const products = useContext(ProductsContext);
+  const context = useContext(ProductsContext);
 
-  if (products === undefined) {
+  if (context === undefined) {
     throw new Error("useProducts must be used within a ProductsProvider");
   }
 
-  return products;
+  return context;
 }
-export const ProductsProvider = ProductsContext.Provider;
