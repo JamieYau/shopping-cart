@@ -1,6 +1,17 @@
 .storePage {
 }
 
+.header {
+  > * {
+    margin: 0;
+  }
+}
+
+.actions {
+  display: flex;
+  gap: 1em;
+}
+
 .sortContainer {
   display: flex;
   justify-content: space-between;
@@ -8,7 +19,7 @@
   padding: 3em 4rem;
 }
 
-.sortContainer select {
+.actions select {
   padding: 0.4em 0em;
   border-radius: 5px;
   text-align: center;
@@ -16,6 +27,7 @@
   color: rgb(59, 59, 59);
   font-weight: bold;
   border: 1px solid #2a2a2a84;
+  margin-left: 0.5em;
 }
 
 .store {
