@@ -25,7 +25,7 @@ export type BasketProviderProps = {
 
 export interface BasketContextType {
   basket: Product[];
-  showBasket: boolean;
+  isOpen: boolean;
   addToBasket: (product: Product) => void;
   removeFromBasket: (productId: number) => void;
   toggleBasket: () => void;

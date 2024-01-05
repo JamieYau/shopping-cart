@@ -11,7 +11,7 @@ export const BasketContext = createContext<BasketContextType | undefined>(
 
 export default function BasketProvider({ children }: BasketProviderProps) {
   const [basket, setBasket] = useState<Product[]>([]);
-  const [showBasket, setShowBasket] = useState<boolean>(false);
+  const [isOpen, setIsOpen] = useState(false);
 
   const addToBasket = (product: Product) => {
     setBasket((prevBasket) => [...prevBasket, product]);
@@ -24,12 +24,12 @@ export default function BasketProvider({ children }: BasketProviderProps) {
   };
 
   const toggleBasket = () => {
-    setShowBasket((prevShowBasket) => !prevShowBasket);
-  }
+    setIsOpen((prevIsOpen) => !prevIsOpen);
+  };
 
   const contextValue = useMemo(
-    () => ({ basket, showBasket ,addToBasket, removeFromBasket, toggleBasket }),
-    [basket, showBasket]
+    () => ({ basket, isOpen, addToBasket, removeFromBasket, toggleBasket }),
+    [basket, isOpen]
   );
 
   return (
