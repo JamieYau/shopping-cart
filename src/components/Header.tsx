@@ -1,7 +1,6 @@
 // Header.tsx
 import { NavLink } from "react-router-dom";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faCartShopping } from "@fortawesome/free-solid-svg-icons";
+import { IoCartOutline } from "react-icons/io5";
 import styles from "./Header.module.css";
 
 export default function Header() {
@@ -28,10 +27,7 @@ export default function Header() {
               type="button"
               aria-label="Shopping Basket"
             >
-              <FontAwesomeIcon
-                icon={faCartShopping}
-                className={styles.basketIcon}
-              />
+              <IoCartOutline />
             </button>
           </li>
         </ul>
