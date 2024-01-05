@@ -1,5 +1,5 @@
 import styles from "./ProductCard.module.css";
-import Product from "../types/types";
+import { Product } from "../types/types";
 import formatRating from "../utils/helpers";
 
 export default function ProductCard({ product }: { product: Product }) {

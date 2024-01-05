@@ -21,7 +21,7 @@ function Router() {
           element: <StorePage />,
         },
         {
-          path: "store/product/:id",
+          path: "product/:id",
           element: <ProductPage />,
         },
       ],
