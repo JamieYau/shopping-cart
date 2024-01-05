@@ -1,19 +1,7 @@
 import PropTypes from "prop-types";
 import styles from "./ProductList.module.css";
 import ProductCard from "./ProductCard";
-
-interface Product {
-  id: number;
-  title: string;
-  category: string;
-  description: string;
-  image: string;
-  price: number;
-  rating: {
-    rate: number;
-    count: number;
-  };
-}
+import Product from "../types/product";
 
 export default function ProductList({
   products,

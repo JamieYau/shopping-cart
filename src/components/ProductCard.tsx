@@ -1,17 +1,5 @@
 import styles from "./ProductCard.module.css";
-
-interface Product {
-  id: number;
-  title: string;
-  category: string;
-  description: string;
-  image: string;
-  price: number;
-  rating: {
-    rate: number;
-    count: number;
-  };
-}
+import Product from "../types/product";
 
 export default function ProductCard({ product }: { product: Product }) {
   return (
