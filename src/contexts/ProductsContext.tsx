@@ -10,14 +10,14 @@ type ProductsContextType = {
   setProducts: React.Dispatch<React.SetStateAction<Product[]>>;
 };
 const ProductsContext = createContext<ProductsContextType | undefined>(
-  undefined
+  undefined,
 );
 
 export default function ProductsProvider({ children }: ProductsProviderProps) {
   const [products, setProducts] = useState<Product[]>([]);
   const contextValue = useMemo(
     () => ({ products, setProducts }),
-    [products, setProducts]
+    [products, setProducts],
   );
 
   useEffect(() => {

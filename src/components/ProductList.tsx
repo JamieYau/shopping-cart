@@ -36,7 +36,7 @@ ProductList.propTypes = {
         rate: PropTypes.number.isRequired,
         count: PropTypes.number.isRequired,
       }).isRequired,
-    })
+    }),
   ).isRequired,
   className: PropTypes.string,
 };

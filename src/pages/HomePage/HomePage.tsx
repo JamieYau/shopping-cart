@@ -4,7 +4,7 @@ import ProductList from "../../components/ProductList";
 import { useProducts } from "../../contexts/ProductsContext";
 
 export default function HomePage() {
-  const {products} = useProducts();
+  const { products } = useProducts();
   const featuredProducts = products.slice(1, 5);
 
   return (
@@ -23,9 +23,7 @@ export default function HomePage() {
       </section>
       <section className={styles.featuredSection}>
         <h2>Featured Items</h2>
-        <ProductList
-          products={featuredProducts}
-        />
+        <ProductList products={featuredProducts} />
       </section>
     </main>
   );
