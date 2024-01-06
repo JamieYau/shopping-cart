@@ -1,3 +1,4 @@
+import { IoCloseSharp } from "react-icons/io5";
 import { useBasket } from "../contexts/BasketContext";
 import { useProducts } from "../contexts/ProductsContext";
 import BasketItem from "./BasketItem";
@@ -24,6 +25,13 @@ export default function Basket() {
         <div className={styles.basketHeader}>
           <h2 className={styles.title}>Basket</h2>
           <span>({formatItemCount(basket.length)})</span>
+          <button
+            type="button"
+            aria-label="Close Basket"
+            onClick={toggleBasket}
+          >
+            <IoCloseSharp />
+          </button>
         </div>
         {basketProducts.length === 0 ? (
           <p className={styles.empty}>Your basket is empty</p>
