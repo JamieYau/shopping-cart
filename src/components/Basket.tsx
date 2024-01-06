@@ -20,17 +20,17 @@ export default function Basket() {
   return (
     <>
       <div className={`${styles.basket} ${isOpen ? styles.open : ""}`}>
-        <h2 className={styles.title}>Basket</h2>
+        <div className={styles.basketHeader}>
+          <h2 className={styles.title}>Basket</h2>
+          <span>({basket.length} Items)</span>
+        </div>
         {basketProducts.length === 0 ? (
           <p className={styles.empty}>Your basket is empty</p>
         ) : (
           <>
             <ul className={styles.list}>
               {basketProducts.map((product) => (
-                <BasketItem
-                  key={product.id}
-                  product={product}
-                />
+                <BasketItem key={product.id} product={product} />
               ))}
             </ul>
             <p className={styles.total}>Total: £{totalPrice}</p>
