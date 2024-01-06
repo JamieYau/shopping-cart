@@ -1,9 +1,10 @@
 import { useBasket } from "../contexts/BasketContext";
 import { useProducts } from "../contexts/ProductsContext";
+import BasketItem from "./BasketItem";
 import styles from "./Basket.module.css";
 
 export default function Basket() {
-  const { basket, removeFromBasket, isOpen, toggleBasket } = useBasket();
+  const { basket, isOpen, toggleBasket } = useBasket();
   const { products } = useProducts();
   const basketProducts = basket.map((basketItem) => {
     const product = products.find((prod) => prod.id === basketItem.id);
@@ -26,24 +27,10 @@ export default function Basket() {
           <>
             <ul className={styles.list}>
               {basketProducts.map((product) => (
-                <li key={product.id} className={styles.listItem}>
-                  <img
-                    className={styles.image}
-                    src={product.image}
-                    alt="Placeholder"
-                  />
-                  <div className={styles.details}>
-                    <p className={styles.title}>{product.title}</p>
-                    <p className={styles.price}>£{product.price}</p>
-                  </div>
-                  <button
-                    type="button"
-                    className={styles.remove}
-                    onClick={() => removeFromBasket(product.id)}
-                  >
-                    Remove
-                  </button>
-                </li>
+                <BasketItem
+                  key={product.id}
+                  product={product}
+                />
               ))}
             </ul>
             <p className={styles.total}>Total: £{totalPrice}</p>

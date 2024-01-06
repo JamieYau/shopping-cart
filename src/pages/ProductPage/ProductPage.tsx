@@ -1,9 +1,11 @@
 import { useParams } from "react-router-dom";
 import { useProducts } from "../../contexts/ProductsContext";
 import formatRating from "../../utils/helpers";
+import { useBasket } from "../../contexts/BasketContext";
 
 export default function ProductPage() {
   const { id } = useParams();
+  const { addToBasket } = useBasket();
   const { products } = useProducts();
   const product = products.find((prod) => prod.id === Number(id));
   if (!product) return null;
@@ -22,7 +24,7 @@ export default function ProductPage() {
           <span>{count}</span>
         </div>
       </div>
-      <button type="button">Add to Cart</button>
+      <button type="button" onClick={() => addToBasket(product)}>Add to Cart</button>
     </main>
   );
 }

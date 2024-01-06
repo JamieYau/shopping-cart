@@ -1,12 +1,18 @@
 .basket {
   position: fixed;
   right: 0;
-  width: 300px;
+  width: 400px;
   height: 100%;
   transform: translateX(100%);
   transition: transform 0.3s ease-in-out;
   z-index: 10000;
-  background-color: antiquewhite;
+  background-color: rgb(240, 240, 240);
+}
+
+.list {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
 }
 
 .open {
