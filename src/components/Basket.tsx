@@ -1,6 +1,7 @@
 import { useBasket } from "../contexts/BasketContext";
 import { useProducts } from "../contexts/ProductsContext";
 import BasketItem from "./BasketItem";
+import formatItemCount from "../utils/helpers";
 import styles from "./Basket.module.css";
 
 export default function Basket() {
@@ -22,7 +23,7 @@ export default function Basket() {
       <div className={`${styles.basket} ${isOpen ? styles.open : ""}`}>
         <div className={styles.basketHeader}>
           <h2 className={styles.title}>Basket</h2>
-          <span>({basket.length} Items)</span>
+          <span>({formatItemCount(basket.length)})</span>
         </div>
         {basketProducts.length === 0 ? (
           <p className={styles.empty}>Your basket is empty</p>
