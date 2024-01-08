@@ -1,30 +1,18 @@
 import { IoCloseSharp } from "react-icons/io5";
 import { useBasket } from "../contexts/BasketContext";
-import { useProducts } from "../contexts/ProductsContext";
 import BasketItem from "./BasketItem";
 import formatItemCount from "../utils/helpers";
 import styles from "./Basket.module.css";
 
 export default function Basket() {
-  const { basket, isOpen, toggleBasket } = useBasket();
-  const { products } = useProducts();
-  const basketProducts = basket.map((basketItem) => {
-    const product = products.find((prod) => prod.id === basketItem.id);
-    return {
-      ...basketItem,
-      ...product,
-    };
-  });
-  const totalPrice = basketProducts.reduce(
-    (acc, product) => acc + product.price,
-    0
-  );
+  const { basket, isOpen, totalPrice, itemCount, toggleBasket } = useBasket();
+
   return (
     <>
       <div className={`${styles.basket} ${isOpen ? styles.open : ""}`}>
         <div className={styles.basketHeader}>
           <h2 className={styles.title}>Basket</h2>
-          <span>({formatItemCount(basket.length)})</span>
+          <span>({formatItemCount(itemCount)})</span>
           <button
             type="button"
             aria-label="Close Basket"
@@ -33,13 +21,16 @@ export default function Basket() {
             <IoCloseSharp />
           </button>
         </div>
-        {basketProducts.length === 0 ? (
+        {itemCount === 0 ? (
           <p className={styles.empty}>Your basket is empty</p>
         ) : (
           <>
             <ul className={styles.list}>
-              {basketProducts.map((product) => (
-                <BasketItem key={product.id} product={product} />
+              {basket.map((basketItem) => (
+                <BasketItem
+                  key={basketItem.product.id}
+                  basketItem={basketItem}
+                />
               ))}
             </ul>
             <p className={styles.total}>Total: £{totalPrice}</p>

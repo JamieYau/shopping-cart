@@ -11,6 +11,11 @@ export type Product = {
   };
 };
 
+export type BasketItem = {
+  product: Product;
+  quantity: number;
+};
+
 export type ProductsProviderProps = {
   children: React.ReactNode;
 };
@@ -24,8 +29,10 @@ export type BasketProviderProps = {
 };
 
 export interface BasketContextType {
-  basket: Product[];
+  basket: BasketItem[];
   isOpen: boolean;
+  totalPrice: number;
+  itemCount: number;
   addToBasket: (product: Product) => void;
   removeFromBasket: (productId: number) => void;
   toggleBasket: () => void;
