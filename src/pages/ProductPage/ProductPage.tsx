@@ -1,6 +1,6 @@
 import { useParams } from "react-router-dom";
 import { useProducts } from "../../contexts/ProductsContext";
-import formatRating from "../../utils/helpers";
+import formatRating from "../../utils/jsxHelpers";
 import { useBasket } from "../../contexts/BasketContext";
 
 export default function ProductPage() {
@@ -24,7 +24,9 @@ export default function ProductPage() {
           <span>{count}</span>
         </div>
       </div>
-      <button type="button" onClick={() => addToBasket(product)}>Add to Cart</button>
+      <button type="button" onClick={() => addToBasket(product)}>
+        Add to Cart
+      </button>
     </main>
   );
 }
