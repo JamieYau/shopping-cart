@@ -1,0 +1,65 @@
+.quantitySelector {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  box-shadow:
+    0 3px 6px rgba(0, 0, 0, 0.10),
+    0 3px 6px rgba(0, 0, 0, 0.10);
+  border-radius: 5px;
+
+  &:focus {
+    background: red;
+  }
+}
+
+.quantitySelector button,
+input {
+  user-select: none;
+  outline: none;
+}
+
+.quantitySelector button {
+  justify-content: center;
+  width: 1.5rem;
+  height: 100%;
+  font-size: 1.2rem;
+  background: #f3f3f3;
+  color: #888;
+  padding: 0;
+
+  &:hover {
+    background-color: #e0e0e0;
+    color: #333;
+    scale: 1;
+  }
+}
+
+.left {
+  border-top-left-radius: 5px;
+  border-bottom-left-radius: 5px;
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+}
+
+.right {
+  border-top-right-radius: 5px;
+  border-bottom-right-radius: 5px;
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+}
+
+.quantitySelector input {
+  width: 2rem;
+  border: none;
+  text-align: center;
+  font-size: 1rem;
+  background-color: #ffffff;
+  color: #333;
+
+  &::-webkit-inner-spin-button,
+  &::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+  }
+}

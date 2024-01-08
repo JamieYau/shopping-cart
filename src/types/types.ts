@@ -34,6 +34,7 @@ export interface BasketContextType {
   totalPrice: number;
   itemCount: number;
   addToBasket: (product: Product) => void;
+  updateQuantity: (productId: number, quantity: number) => void;
   removeFromBasket: (productId: number) => void;
   toggleBasket: () => void;
 }

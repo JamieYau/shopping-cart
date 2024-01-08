@@ -45,6 +45,26 @@ export default function BasketProvider({ children }: BasketProviderProps) {
     });
   };
 
+  const updateQuantity = (productId: number, quantity: number) => {
+    setBasket((prevBasket) => {
+      const existingItemIndex = prevBasket.findIndex(
+        (item) => item.product.id === productId
+      );
+
+      if (existingItemIndex >= 0) {
+        // If the product is in the basket, update the quantity
+        const newBasket = [...prevBasket];
+        newBasket[existingItemIndex] = {
+          ...newBasket[existingItemIndex],
+          quantity,
+        };
+        return newBasket;
+      }
+      // If the product is not in the basket, do nothing
+      return prevBasket;
+    });
+  };
+
   const removeFromBasket = (productId: number) => {
     setBasket((prevBasket) =>
       prevBasket.filter((item) => item.product.id !== productId)
@@ -59,11 +79,12 @@ export default function BasketProvider({ children }: BasketProviderProps) {
     () => ({
       basket,
       isOpen,
-      addToBasket,
-      removeFromBasket,
-      toggleBasket,
       totalPrice,
       itemCount,
+      addToBasket,
+      updateQuantity,
+      removeFromBasket,
+      toggleBasket,
     }),
     [basket, isOpen, totalPrice, itemCount]
   );
