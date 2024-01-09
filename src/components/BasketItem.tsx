@@ -14,15 +14,20 @@ export default function BasketItem({
   return (
     <li className={styles.listItem}>
       <img className={styles.image} src={product.image} alt="Placeholder" />
-      <div className={styles.details}>
-        <p className={styles.title}>{product.title}</p>
-        <QuantitySelector
-          initialQuantity={quantity}
-          onQuantityChange={(newQuantity) =>
-            updateQuantity(product.id, newQuantity)
-          }
-        />
-        <p className={styles.price}>£{product.price}</p>
+      <div className={styles.information}>
+        <div className={styles.details}>
+          <h3 className={styles.title}>{product.title}</h3>
+          <p className={styles.category}>{product.category}</p>
+        </div>
+        <div className={styles.actions}>
+          <QuantitySelector
+            initialQuantity={quantity}
+            onQuantityChange={(newQuantity) =>
+              updateQuantity(product.id, newQuantity)
+            }
+          />
+          <span className={styles.price}>£{product.price}</span>
+        </div>
       </div>
       <button
         type="button"

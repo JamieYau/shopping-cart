@@ -21,9 +21,9 @@ input {
 
 .quantitySelector button {
   justify-content: center;
-  width: 1.5rem;
+  width: 1.5em;
   height: 100%;
-  font-size: 1.2rem;
+  font-size: 1.2em;
   background: #f3f3f3;
   color: #888;
   padding: 0;
@@ -50,10 +50,10 @@ input {
 }
 
 .quantitySelector input {
-  width: 2rem;
+  width: 2em;
   border: none;
   text-align: center;
-  font-size: 1rem;
+  font-size: 1em;
   background-color: #ffffff;
   color: #333;
 
