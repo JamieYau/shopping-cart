@@ -1,7 +1,7 @@
 import { describe, expect, it } from "vitest";
 import { IoStarHalfSharp, IoStarOutline, IoStarSharp } from "react-icons/io5";
 import React from "react";
-import formatRating from "../src/utils/helpers";
+import formatRating from "../src/utils/jsxHelpers";
 
 describe("formatRating", () => {
   it("should return an object with 'stars' and 'count' properties", () => {
