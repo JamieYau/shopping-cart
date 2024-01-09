@@ -1,6 +1,6 @@
 import styles from "./ProductCard.module.css";
 import { Product } from "../types/types";
-import formatRating from "../utils/helpers";
+import formatRating from "../utils/jsxHelpers";
 
 export default function ProductCard({ product }: { product: Product }) {
   const { stars, count } = formatRating(product);
