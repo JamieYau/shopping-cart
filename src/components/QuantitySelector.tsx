@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import PropTypes from "prop-types";
 import { IoMdRemove, IoMdAdd } from "react-icons/io";
 import styles from "./QuantitySelector.module.css";
@@ -11,6 +11,10 @@ export default function QuantitySelector({
   onQuantityChange: (newQuantity: number) => void;
 }) {
   const [quantity, setQuantity] = useState(initialQuantity);
+
+  useEffect(() => {
+    setQuantity(initialQuantity);
+  }, [initialQuantity]);
 
   const handleIncrease = () => {
     const newQuantity = quantity + 1;
