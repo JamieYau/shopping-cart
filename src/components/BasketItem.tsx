@@ -3,6 +3,7 @@ import styles from "./BasketItem.module.css";
 import { useBasket } from "../contexts/BasketContext";
 import { BasketItem as BasketItemType } from "../types/types";
 import QuantitySelector from "./QuantitySelector";
+import { formatPrice } from "../utils/helpers";
 
 export default function BasketItem({
   basketItem,
@@ -26,7 +27,7 @@ export default function BasketItem({
               updateQuantity(product.id, newQuantity)
             }
           />
-          <span className={styles.price}>£{product.price}</span>
+          <span className={styles.price}>{formatPrice(product.price)}</span>
         </div>
       </div>
       <button

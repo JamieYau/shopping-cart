@@ -1,7 +1,7 @@
 import { IoCloseSharp } from "react-icons/io5";
 import { useBasket } from "../contexts/BasketContext";
 import BasketItem from "./BasketItem";
-import formatItemCount from "../utils/helpers";
+import {formatItemCount, formatPrice} from "../utils/helpers";
 import styles from "./Basket.module.css";
 
 export default function Basket() {
@@ -33,7 +33,7 @@ export default function Basket() {
                 />
               ))}
             </ul>
-            <p className={styles.total}>Total: £{totalPrice}</p>
+            <p className={styles.total}>Total: {formatPrice(totalPrice)}</p>
           </>
         )}
       </div>
