@@ -2,8 +2,10 @@
 import { NavLink } from "react-router-dom";
 import { IoCartOutline } from "react-icons/io5";
 import styles from "./Header.module.css";
+import { useBasket } from "../contexts/BasketContext";
 
 export default function Header() {
+  const { toggleBasket } = useBasket();
   return (
     <header className={styles.header}>
       <NavLink to="/" className={styles.logoLink}>
@@ -26,6 +28,7 @@ export default function Header() {
               className={styles.basket}
               type="button"
               aria-label="Shopping Basket"
+              onClick={toggleBasket}
             >
               <IoCartOutline />
             </button>
