@@ -1,0 +1,36 @@
+.container {
+  display: flex;
+  justify-content: center;
+
+  > .imageContainer,
+  .details {
+    max-width: 50%;
+    padding: 2rem;
+  }
+}
+
+.imageContainer {
+  .image {
+    width: 100%;
+    height: auto;
+    border-radius: 0.5rem;
+  }
+}
+
+.details {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+
+  h1 {
+    font-size: 2rem;
+    font-weight: 500;
+    margin: 0 0 1rem;
+  }
+
+  .category {
+    margin: 0;
+    width: 100%;
+    border-bottom: 1px solid #ccc;
+  }
+}
