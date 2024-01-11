@@ -58,13 +58,34 @@
   overflow: auto;
 }
 
+.basketFooter {
+  .basketActions {
+    display: flex;
+    justify-content: center;
+    gap: 0.5em;
+    padding: 1em 2em;
+    border-top: 1px solid rgb(200, 200, 200);
+
+    button {
+      flex: 1;
+      font-weight: 600;
+      font-size: 0.9em;
+
+      &.viewBasketBtn {
+        background: transparent;
+        color: rgb(0, 0, 0);
+        border: 2px solid #c7c7c7;
+      }
+    }
+  }
+}
+
 .total {
   font-size: 14px;
   font-weight: 700;
   margin: 0;
   display: flex;
-  flex-direction: column;
-  align-items: flex-end;
+  justify-content: space-between;
   padding: 1em 2em;
   border-top: 1px solid rgb(200, 200, 200);
 }

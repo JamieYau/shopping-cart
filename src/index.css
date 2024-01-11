@@ -43,6 +43,7 @@ a {
 button,
 .button {
   display: flex;
+  justify-content: center;
   align-items: center;
   background-color: #22a89d;
   color: #ffffff;
