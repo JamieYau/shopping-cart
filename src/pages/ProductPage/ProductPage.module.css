@@ -87,3 +87,15 @@
     }
   }
 }
+
+@media (max-width: 768px) {
+  .container {
+    flex-direction: column;
+
+    > .imageContainer,
+    .details {
+      max-width: 100%;
+      padding: 1rem;
+    }
+  }
+}
