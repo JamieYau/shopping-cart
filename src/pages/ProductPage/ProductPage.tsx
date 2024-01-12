@@ -1,12 +1,15 @@
 import { useParams } from "react-router-dom";
+import { useState } from "react";
 import { useProducts } from "../../contexts/ProductsContext";
 import formatRating from "../../utils/jsxHelpers";
 import { formatPrice } from "../../utils/helpers";
 import { useBasket } from "../../contexts/BasketContext";
+import QuantitySelector from "../../components/QuantitySelector";
 import styles from "./ProductPage.module.css";
 
 export default function ProductPage() {
   const { id } = useParams();
+  const [quantity, setQuantity] = useState(1);
   const { addToBasket } = useBasket();
   const { products } = useProducts();
   const product = products.find((prod) => prod.id === Number(id));
@@ -22,16 +25,24 @@ export default function ProductPage() {
         <h1>{product.title}</h1>
         <p className={styles.category}>{product.category}</p>
         <p className={styles.description}>{product.description}</p>
-        <div>
-          <p>{formatPrice(product.price)}</p>
-          <div className={styles.rating}>
-            {stars}
-            <span>{count}</span>
-          </div>
+        <div className={styles.rating}>
+          {stars}
+          <span>{count}</span>
         </div>
-        <button type="button" onClick={() => addToBasket(product)}>
-          Add to Cart
-        </button>
+        <p className={styles.price}>{formatPrice(product.price)}</p>
+        <div className={styles.actions}>
+          <QuantitySelector
+            initialQuantity={quantity}
+            onQuantityChange={setQuantity}
+          />
+          <button
+            className={styles.addToBasket}
+            type="button"
+            onClick={() => addToBasket(product, quantity)}
+          >
+            Add to Cart
+          </button>
+        </div>
       </div>
     </main>
   );

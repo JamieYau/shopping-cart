@@ -39,4 +39,51 @@
     color: #666;
     border-bottom: 1px solid #ccc;
   }
+
+  .description {
+    font-size: 1.1rem;
+    color: #1a1a1a;
+  }
+
+  .rating {
+    display: flex;
+    align-items: center;
+    font-size: 1.1em;
+
+    > svg {
+      color: #f1c40f;
+    }
+
+    > span {
+      margin-left: 0.2rem;
+    }
+  }
+
+  .price {
+    margin: 0 0 0.5rem;
+    font-size: 1.5rem;
+    font-weight: 500;
+    color: #333;
+  }
+
+  .actions {
+    display: flex;
+    gap: 2rem;
+    width: 100%;
+
+    > div {
+      button {
+        width: 2em;
+      }
+
+      input {
+        width: 3em;
+        text-align: center;
+      }
+    }
+
+    .addToBasket {
+      flex: 1;
+    }
+  }
 }
