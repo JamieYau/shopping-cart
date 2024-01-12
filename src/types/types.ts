@@ -33,7 +33,7 @@ export interface BasketContextType {
   isOpen: boolean;
   totalPrice: number;
   itemCount: number;
-  addToBasket: (product: Product) => void;
+  addToBasket: (product: Product, quantity: number) => void;
   updateQuantity: (productId: number, quantity: number) => void;
   removeFromBasket: (productId: number) => void;
   toggleBasket: () => void;

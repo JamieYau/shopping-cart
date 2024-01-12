@@ -1,0 +1,101 @@
+.container {
+  display: flex;
+  justify-content: center;
+  background-color: #ffffff;
+
+  > .imageContainer,
+  .details {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    max-width: 50%;
+    padding: 3rem;
+  }
+}
+
+.imageContainer {
+  .image {
+    width: 100%;
+    aspect-ratio: 1/1;
+    border-radius: 0.5rem;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+}
+
+.details {
+  align-items: flex-start;
+
+  h1 {
+    font-size: 2rem;
+    font-weight: 500;
+    margin: 0 0 0.5rem;
+  }
+
+  .category {
+    margin: 0;
+    width: 100%;
+    font-size: 1.1rem;
+    font-weight: 400;
+    color: #666;
+    border-bottom: 1px solid #ccc;
+  }
+
+  .description {
+    font-size: 1.1rem;
+    color: #1a1a1a;
+  }
+
+  .rating {
+    display: flex;
+    align-items: center;
+    font-size: 1.1em;
+
+    > svg {
+      color: #f1c40f;
+    }
+
+    > span {
+      margin-left: 0.2rem;
+    }
+  }
+
+  .price {
+    margin: 0 0 0.5rem;
+    font-size: 1.5rem;
+    font-weight: 500;
+    color: #333;
+  }
+
+  .actions {
+    display: flex;
+    gap: 2rem;
+    width: 100%;
+
+    > div {
+      button {
+        width: 2em;
+      }
+
+      input {
+        width: 3em;
+        text-align: center;
+      }
+    }
+
+    .addToBasket {
+      flex: 1;
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .container {
+    flex-direction: column;
+
+    > .imageContainer,
+    .details {
+      max-width: 100%;
+      padding: 1rem;
+    }
+  }
+}
