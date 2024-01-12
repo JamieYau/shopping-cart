@@ -1,36 +1,42 @@
 .container {
   display: flex;
   justify-content: center;
+  background-color: #ffffff;
 
   > .imageContainer,
   .details {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
     max-width: 50%;
-    padding: 2rem;
+    padding: 3rem;
   }
 }
 
 .imageContainer {
   .image {
     width: 100%;
-    height: auto;
+    aspect-ratio: 1/1;
     border-radius: 0.5rem;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
   }
 }
 
 .details {
-  display: flex;
-  flex-direction: column;
   align-items: flex-start;
 
   h1 {
     font-size: 2rem;
     font-weight: 500;
-    margin: 0 0 1rem;
+    margin: 0 0 0.5rem;
   }
 
   .category {
     margin: 0;
     width: 100%;
+    font-size: 1.1rem;
+    font-weight: 400;
+    color: #666;
     border-bottom: 1px solid #ccc;
   }
 }
