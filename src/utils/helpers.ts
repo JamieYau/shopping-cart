@@ -28,18 +28,15 @@ export function filterProducts(
   return products.filter((product) => product.category === category);
 }
 
-export function sortProducts(products: Product[], sort: string): Product[] {
-  if (sort === "default") {
-    return products;
+export function sortProducts(products: Product[], sortType: string): Product[] {
+  switch (sortType) {
+    case "price-lowest":
+      return [...products].sort((a, b) => a.price - b.price);
+    case "price-highest":
+      return [...products].sort((a, b) => b.price - a.price);
+    case "rating":
+      return [...products].sort((a, b) => b.rating.rate - a.rating.rate);
+    default:
+      return products;
   }
-  if (sort === "price-lowest") {
-    return products.sort((a, b) => a.price - b.price);
-  }
-  if (sort === "price-highest") {
-    return products.sort((a, b) => b.price - a.price);
-  }
-  if (sort === "rating") {
-    return products.sort((a, b) => b.rating.rate - a.rating.rate);
-  }
-  return products;
 }
